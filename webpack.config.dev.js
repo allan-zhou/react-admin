@@ -1,22 +1,18 @@
 const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
 
   entry: {
-    app: path.resolve(__dirname, 'src/index.js')
+    app: path.resolve(__dirname, 'src/index.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
 
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'News'
-    }),
+
   ],
   module: {
     rules: [
@@ -24,20 +20,30 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader'
-        ]
+          'css-loader',
+        ],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
-          'file-loader'
-        ]
-      }
-    ]
+          'file-loader',
+        ],
+      },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env', 'react'],
+          },
+        },
+      },
+    ],
   },
   devServer: {
     inline: true,
-    contentBase: path.resolve(__dirname, "assets"),
+    contentBase: path.resolve(__dirname, 'assets'),
     // publicPath: 'http://localhost:8080/dist/',
   },
 };
