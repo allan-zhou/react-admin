@@ -1,10 +1,12 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
 
   entry: {
-    app: path.resolve(__dirname, 'src/index.js'),
+    app: path.resolve(__dirname, 'app/index.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -12,7 +14,31 @@ module.exports = {
   },
 
   plugins: [
-
+    new CopyWebpackPlugin([
+      {
+        from: 'app/public',
+        to: path.resolve(__dirname, 'dist'),
+      },
+    ]),
+    new HtmlWebpackPlugin({
+      // Required
+      inject: false,
+      template: require('html-webpack-template'),
+      mobile: true,
+      hash: true,
+      title: 'admin',
+      appMountId: 'root',
+      filename: 'index.html',
+      minify: {
+        collapseWhitespace: false,
+      },
+      meta: [
+        {
+          name: 'description',
+          content: 'admin application demo',
+        },
+      ],
+    }),
   ],
   module: {
     rules: [
@@ -43,7 +69,7 @@ module.exports = {
   },
   devServer: {
     inline: true,
-    contentBase: path.resolve(__dirname, 'assets'),
+    contentBase: path.resolve(__dirname, 'app/public'),
     // publicPath: 'http://localhost:8080/dist/',
   },
 };

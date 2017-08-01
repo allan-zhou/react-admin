@@ -9,6 +9,10 @@
     "react"
   ],
   "rules": {
-    "react/jsx-filename-extension": "warn"
+    "react/jsx-filename-extension": 0,
+    "arrow-body-style": [0, "never"],
+    "comma-dangle": [2, "always-multiline"],
+    "global-require": 0,
+    "no-unused-vars": [2, { "ignoreRestSiblings": true }]
   }
 }
