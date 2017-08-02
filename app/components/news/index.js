@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from '../header/Header';
+import { Link } from 'react-router-dom';
 
 const News = () => (
   <div>
-    <Header />
     <h2>News</h2>
+    <Link to="/">Home</Link>
   </div>
 );
 

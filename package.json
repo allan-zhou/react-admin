@@ -6,8 +6,8 @@
   "author": "popzhou",
   "license": "ISC",
   "scripts": {
-    "build": "webpack --env=dev --progress --profile --colors",
-    "start": "webpack-dev-server --env=dev --inline"
+    "build": "webpack --progress --profile --colors",
+    "start": "webpack-dev-server --inline"
   },
   "dependencies": {
     "history": "^4.6.3",

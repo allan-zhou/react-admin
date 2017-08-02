@@ -1,15 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './home/home';
-import News from './news/news';
+import { Header, Main } from './layout';
 
 const App = () => (
-  <Router>
-    <Route>
-      <Route exact path="/" component={Home} />
-      <Route path="/news" component={News} />
-    </Route>
-  </Router>
+  <div>
+    <Header />
+    <Main />
+  </div>
 );
 
 export default App;

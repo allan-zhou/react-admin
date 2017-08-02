@@ -1,30 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router } from 'react-router';
-import createBrowserHistory from 'history/createBrowserHistory';
-import { Route } from 'react-router-dom';
-
-const history = createBrowserHistory();
-
-const Home = () => {
-  return (
-    <div>
-      Home
-    </div>
-  );
-};
-
-const About = () => {
-  return (
-    <div>
-      About
-    </div>
-  );
-};
-
+import { BrowserRouter } from 'react-router-dom';
+import App from './components/app';
 
 ReactDOM.render(
-  <Router history={history}>
-    <Route exact path="/" component={Home} />
-  </Router>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
   , document.getElementById('root'));
