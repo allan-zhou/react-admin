@@ -14,7 +14,7 @@ const MainRoutes = () => (
 
 const HeaderRoutes = () => (
   <Switch>
-    <Route path="/news" component={Home} />
+    <Route path="/news" component={News} />
   </Switch>
 );
 
