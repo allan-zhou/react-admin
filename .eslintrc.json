@@ -9,6 +9,7 @@
     "react"
   ],
   "rules": {
+    "semi": 0,
     "react/jsx-filename-extension": 0,
     "arrow-body-style": [0, "never"],
     "comma-dangle": [2, "always-multiline"],

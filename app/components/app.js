@@ -1,19 +1,17 @@
 import React from 'react';
-import { Layout, Menu } from 'antd';
-import 'antd/dist/antd.less';
+import { Layout } from 'antd';
 import '../style/base.less';
 import MyHeader from '../components/layout/header';
+import MyContent from '../components/layout/content';
+import MyFooter from '../components/layout/footer';
 
-const { Footer, Content } = Layout;
 
 const App = () => (
   <div>
     <Layout>
       <MyHeader />
-      <Content>Content</Content>
-      <Footer style={{ textAlign: 'center' }}>
-        ©2017 Created by popzhou
-      </Footer>
+      <MyContent />
+      <MyFooter />
     </Layout>
   </div>
 );

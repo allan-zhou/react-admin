@@ -1,0 +1,23 @@
+@import '../../style/base.less';
+
+@my-layout-prefix-cls: ~"@{my-prefix}-layout";
+
+.@{my-layout-prefix-cls}{
+  &-logo {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  &-logo a {
+    color: #fff;
+    text-decoration-line: none;
+  }
+  &-main-container {
+    padding: 24;
+  }
+  &-main {
+    background: '#fff'; 
+    padding: 24; 
+    min-height: 280;
+  }
+}

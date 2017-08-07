@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -7,10 +8,14 @@ module.exports = {
 
   entry: {
     app: path.resolve(__dirname, 'app/index.js'),
+    vendor: [
+      'react', 'react-router', 'react-dom',
+    ],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',
+    chunkFilename: '[name].js',
   },
 
   plugins: [
@@ -20,6 +25,10 @@ module.exports = {
         to: path.resolve(__dirname, 'dist'),
       },
     ]),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.bundle.js',
+    }),
     new HtmlWebpackPlugin({
       // Required
       inject: false,
