@@ -4,7 +4,6 @@ import Home from './home';
 import News from './news';
 import Contacts from './contacts';
 import Meeting from './meeting';
-import Addnews from './news/addnews';
 
 const MainRoutes = () => (
   <Switch>

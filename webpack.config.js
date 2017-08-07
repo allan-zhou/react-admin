@@ -17,7 +17,14 @@ module.exports = {
     filename: '[name].js',
     chunkFilename: '[name].js',
   },
-
+  resolve: {
+    extensions: ['.js', '.json'],
+    alias: {
+      components: `${__dirname}/app/components`,
+      utils: `${__dirname}/app/utils`,
+      style: `${__dirname}/app/style`,
+    },
+  },
   plugins: [
     new CopyWebpackPlugin([
       {
@@ -91,5 +98,6 @@ module.exports = {
     inline: true,
     contentBase: path.resolve(__dirname, 'app/public'),
     historyApiFallback: true,
+    hot: true,
   },
 };

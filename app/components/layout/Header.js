@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { Layout, Menu, Row, Col } from 'antd';
-import '../style.less';
+import './style.less';
 
 const { Header } = Layout;
 const StylePrefix = 'popzhou-layout';
@@ -32,12 +32,15 @@ const MyHeader = () => {
             style={{ lineHeight: '64px' }}
           >
             <Menu.Item key="1">
-              <Link to="/contacts">用户管理</Link>
+              <Link to="/">首页</Link>
             </Menu.Item>
             <Menu.Item key="2">
-              <Link to="/news">新闻管理</Link>
+              <Link to="/contacts">通讯录</Link>
             </Menu.Item>
             <Menu.Item key="3">
+              <Link to="/news">新闻管理</Link>
+            </Menu.Item>
+            <Menu.Item key="4">
               <Link to="/meeting">会议管理</Link>
             </Menu.Item>
           </Menu>

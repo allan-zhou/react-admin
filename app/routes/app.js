@@ -1,10 +1,9 @@
 import React from 'react';
 import { Layout } from 'antd';
+import MyHeader from '../components/layout/Header';
+import MyContent from '../components/layout/Content';
+import MyFooter from '../components/layout/Footer';
 import '../style/base.less';
-import MyHeader from '../components/layout/header';
-import MyContent from '../components/layout/content';
-import MyFooter from '../components/layout/footer';
-
 
 const App = () => (
   <div>
