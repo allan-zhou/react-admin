@@ -1,13 +1,18 @@
-.container {
+.contacts-container {
     display: flex;
     flex-direction: column;
-  }
-.left {
+}
+
+.contacts-left {
+    display: flex;
     width: 200px;
     padding: 10px;
     background: '#F9FAFC';
     border-right: '1px dotted #DCE1E6'
-  }
-.right {
+}
+
+.contacts-right {
+    display: flex;
     padding: 16px;
-  }
+    width: 300px;
+}

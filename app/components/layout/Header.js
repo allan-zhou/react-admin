@@ -4,7 +4,6 @@ import { Layout, Menu, Row, Col } from 'antd';
 import './style.less';
 
 const { Header } = Layout;
-const StylePrefix = 'popzhou-layout';
 
 const MyHeader = () => {
   const onSelect = (e) => {
@@ -19,7 +18,7 @@ const MyHeader = () => {
     <Header>
       <Row>
         <Col span={3}>
-          <div className={`${StylePrefix}-logo`}>
+          <div className="layout-header-logo">
             <Link to="/">Admin</Link>
           </div>
         </Col>
@@ -29,7 +28,7 @@ const MyHeader = () => {
             mode="horizontal"
             onClick={handleClick}
             onSelect={onSelect}
-            style={{ lineHeight: '64px' }}
+            className="layout-header-menu"
           >
             <Menu.Item key="1">
               <Link to="/">首页</Link>

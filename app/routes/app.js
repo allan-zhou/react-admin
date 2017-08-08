@@ -1,15 +1,14 @@
 import React from 'react';
 import { Layout } from 'antd';
 import MyHeader from '../components/layout/Header';
-import MyContent from '../components/layout/Content';
 import MyFooter from '../components/layout/Footer';
-import '../style/base.less';
+import { MainRoutes } from '../routes';
 
 const App = () => (
   <div>
     <Layout>
       <MyHeader />
-      <MyContent />
+      {MainRoutes()}
       <MyFooter />
     </Layout>
   </div>
